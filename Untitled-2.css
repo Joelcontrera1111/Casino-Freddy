@@ -1,0 +1,200 @@
+/* Variables de color para un manejo más profesional */
+:root {
+    --fondo-principal: #0b0e14;
+    --fondo-secundario: #1a1f2e;
+    --verde-neon: #00ff66;
+    --dorado-casino: #ffd700;
+    --texto-claro: #ffffff;
+    --texto-oscuro: #8a92a5;
+}
+
+/* Estilos Generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--fondo-principal);
+    color: var(--texto-claro);
+}
+
+/* Navegación Premium */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: var(--fondo-secundario);
+    border-bottom: 2px solid #2a3143;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--dorado-casino);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.navbar a {
+    color: var(--texto-claro);
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--verde-neon);
+}
+
+/* Botones de acción (Call to Action) */
+.btn-acceder {
+    background: transparent;
+    border: 2px solid var(--verde-neon);
+    color: var(--verde-neon);
+    padding: 8px 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 102, 0.1);
+}
+
+.btn-acceder:hover {
+    background: var(--verde-neon);
+    color: #000;
+    box-shadow: 0 0 20px rgba(0, 255, 102, 0.6);
+}
+
+/* Banner Principal (Hero) - Estilo Casino */
+.hero {
+    height: 400px;
+    background: linear-gradient(135deg, #110526 0%, #0c1a14 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 1px solid #2a3143;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de destello en el fondo del banner */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0,255,102,0.1) 0%, rgba(0,0,0,0) 60%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    color: var(--dorado-casino);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+/* Banner Principal (Hero) con Imagen de Fondo Local */
+.hero {
+    height: 440px; /* Ajustamos un poco la altura para que luzca más el diseño */
+    
+    /* --- INTEGRACIÓN DE LA IMAGEN --- */
+    background-image: 
+        /* Capa oscura superior (gradiente) para que el texto resalte y sea legible */
+        linear-gradient(rgba(11, 14, 20, 0.85) 0%, rgba(26, 31, 46, 0.5) 100%),
+        /* Nombre de tu imagen (si la copiaste a la carpeta del proyecto) */
+        url('fondo-casino.jpg');
+    
+    background-size: cover;       /* La imagen cubre todo el espacio sin deformarse */
+    background-position: center;   /* Centra la imagen vertical y horizontalmente */
+    background-repeat: no-repeat;  /* Evita que la imagen se duplique */
+    
+    /* Alineación del texto en el centro */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 1px solid #2a3143;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Reducimos el brillo de fondo anterior para que no tape los detalles de tu imagen */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 255, 102, 0.03) 0%, rgba(0, 0, 0, 0) 60%);
+    z-index: 0;
+}
+
+.games-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-left: 4px solid var(--verde-neon);
+    padding-left: 15px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+/* Tarjetas de los Juegos */
+.game-card {
+    background: linear-gradient(to bottom, #2a3143, #1a1f2e);
+    height: 240px;
+    border-radius: 12px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 20px;
+    font-weight: bold;
+    color: var(--texto-oscuro);
+    border: 1px solid #363e52;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto Hover estilo apuestas */
+.game-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--dorado-casino);
+    color: var(--dorado-casino);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.8), 0 0 15px rgba(255, 215, 0, 0.2);
+}
